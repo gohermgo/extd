@@ -1,10 +1,7 @@
-pub mod index;
-pub use index::IndexableIterator;
-pub mod option;
-pub use option::OptionIterator;
-pub mod result;
-pub use result::ResultIterator;
+// pub mod index;
+// pub use index::IndexableIterator;
 
+pub use traits::{IndexableIterator, OptionIterator, ResultIterator};
 // impl<I, T, E> Iterator for I
 // where
 //     I: ResultIterator,
@@ -13,3 +10,4 @@ pub use result::ResultIterator;
 //     type Item = Result<T, E>;
 //     fn next(&mut self) -> Option<Self::Item> {}
 // }
+mod traits;

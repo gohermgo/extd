@@ -2,6 +2,7 @@
 use ::core::iter::{Enumerate, Filter, FilterMap, Map};
 #[cfg(not(no_std))]
 use ::std::iter::{Enumerate, Filter, FilterMap, Map};
+
 pub trait IndexableIterator: Iterator {
     #[inline]
     fn for_each_i<F>(self, f: F)

@@ -1,7 +1,4 @@
-#[allow(unused_imports)]
-mod iter;
-use iter::{index::IndexableIterator, option::OptionIterator};
-use std::ops::Mul;
+use ::extd::prelude::*;
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let binary_number = "101101011";
     println!("binary_number is {}", binary_number);
@@ -10,11 +7,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         .map(|c| c.to_digit(10))
         .rev()
         .inner_iter()
-        .fold_i(0, |index, acc, e| acc + (e.mul(2u32.pow(index as u32))));
+        .fold_i(0, |index, acc, e| acc + (e * 2u32.pow(index as u32)));
     println!("value in decimal {}", decimal_value);
-    let arr = [1, 2, 3];
+    let arr = [1i32, 2i32, 3i32];
     arr.iter()
         .for_each_i(|x| println!("Element {} is {}", x.0, x.1));
+
     // let p = std::path::Path::new("/");
     // let x = std::fs::read_dir(p)?;
     // let v = x.inner_iter();
