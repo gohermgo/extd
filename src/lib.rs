@@ -14,3 +14,4 @@ pub mod prelude;
 
 pub mod iter;
 pub use iter::{IndexableIterator, OptionIterator, ResultIterator};
+pub mod num;
